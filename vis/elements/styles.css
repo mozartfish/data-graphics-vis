@@ -1,0 +1,32 @@
+.circle {
+  fill: orangered;
+}
+.ellipse {
+  fill: yellow;
+}
+.rectangle {
+  fill: steelblue;
+}
+.line {
+  stroke: black;
+  stroke-width: 1px;
+  fill: none;
+}
+.polygon {
+  stroke: black;
+  stroke-width: 1px;
+  fill: none;
+}
+.polyline {
+  stroke: black;
+  stroke-width: 1px;
+  fill: none;
+}
+.path {
+  stroke: black;
+  stroke-width: 1px;
+  fill: none;
+}
+.text {
+  fill: black;
+}
