@@ -1,5 +1,7 @@
 // Script for rendering the basic line chart
-console.log("hello, world");
+
+// For Debugging Purposes
+// console.log("hello, world");
 
 // function for representing date time on the x axis
 const parseTime = d3.timeParse("%d-%b-%y");
@@ -68,4 +70,3 @@ d3.csv("/data/basic_data.csv").then((data) => {
   // y axis
   svg.append("g").call(d3.axisLeft(yScale));
 });
-
