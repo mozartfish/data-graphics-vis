@@ -1,13 +1,21 @@
 import React from "react";
-import Footer from "./Footer";
-import MainContent from "./MainContent";
-import Header from "./Header";
+// import Footer from "./components/Footer.jsx";
+// import MainContent from "./components/MainContent.jsx";
+// import Header from "./components/Header.jsx";
 function App() {
   return (
     <div>
-      <Header />
+      {/* <Header />
       <MainContent />
-      <Footer />
+      <Footer /> */}
+      <input type="checkbox" />
+      <p>Placeholder text here</p>
+      <input type="checkbox" />
+      <p>Placeholder text here</p>
+      <input type="checkbox" />
+      <p>Placeholder text here</p>
+      <input type="checkbox" />
+      <p>Placeholder text here</p>
     </div>
   );
 }
