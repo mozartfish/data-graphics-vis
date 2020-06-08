@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import MyInfo from "./components/MyInfo.jsx";
+// import MyInfo from "./components/MyInfo.jsx";
 import App from "./App.js";
 
 // // JSX example

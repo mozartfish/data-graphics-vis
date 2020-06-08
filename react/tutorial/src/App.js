@@ -39,13 +39,21 @@ function App() {
   return (
     <div className="contacts">
       <ContactCard
+        contact={{
+          name: "Mr. Whiskerson",
+          imgUrl: "http://placekitten.com/300/200",
+          phone: "(212) 555-1234",
+          email: "mr.whiskaz@catnap.meow",
+        }}
+      />
+      {/* <ContactCard
         name="Mr. Whiskerson"
         imgUrl="http://placekitten.com/300/200"
         phone="(212) 555-1234"
         email="mr.whiskaz@catnap.meow"
-      />
+      /> */}
       <ContactCard
-        name="Mr.C"
+        name="Mr. C"
         imgUrl="http://placekitten.com/400/200"
         phone="(212) 555-3456"
         email="mr.c@catnap.meow"
