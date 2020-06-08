@@ -45,30 +45,46 @@ function App() {
           phone: "(212) 555-1234",
           email: "mr.whiskaz@catnap.meow",
         }}
-      />
-      {/* <ContactCard
-        name="Mr. Whiskerson"
-        imgUrl="http://placekitten.com/300/200"
-        phone="(212) 555-1234"
-        email="mr.whiskaz@catnap.meow"
-      /> */}
-      <ContactCard
-        name="Mr. C"
-        imgUrl="http://placekitten.com/400/200"
-        phone="(212) 555-3456"
-        email="mr.c@catnap.meow"
+        // name="Mr. Whiskerson"
+        // imgUrl="http://placekitten.com/300/200"
+        // phone="(212) 555-1234"
+        // email="mr.whiskaz@catnap.meow"
       />
       <ContactCard
-        name="Mr. The Cat"
-        imgUrl="http://placekitten.com/400/300"
-        phone="(212) 555-7829"
-        email="mr.thecat@catnap.meow"
+        contact={{
+          name: "Mr.C",
+          imgUrl: "http://placekitten.com/400/200",
+          phone: "(212) 55-3456",
+          email: "mr.thecat@catnap.meow",
+        }}
+        // name="Mr. C"
+        // imgUrl="http://placekitten.com/400/200"
+        // phone="(212) 555-3456"
+        // email="mr.c@catnap.meow"
       />
       <ContactCard
-        name="Mr. Furry Friend"
-        imgUrl="http://placekitten.com/200/100"
-        phone="(212) 555-1065"
-        email="mr.furryFriend@catnap.meow"
+        contact={{
+          name: "Mr. The Cat",
+          imgUrl: "http://placekitten.com/400/300",
+          phone: "(212) 55-7829",
+          email: "mr.thecat@catnap.meow",
+        }}
+        // name="Mr. The Cat"
+        // imgUrl="http://placekitten.com/400/300"
+        // phone="(212) 555-7829"
+        // email="mr.thecat@catnap.meow"
+      />
+      <ContactCard
+        contact={{
+          name: "Mr. Furry Friend",
+          imgUrl: "http://placekitten.com/200/100",
+          phone: "(212) 555-1065",
+          email: "mr.furryFriend@catnap.meow",
+        }}
+        // name="Mr. Furry Friend"
+        // imgUrl="http://placekitten.com/200/100"
+        // phone="(212) 555-1065"
+        // email="mr.furryFriend@catnap.meow"
       />
     </div>
   );
