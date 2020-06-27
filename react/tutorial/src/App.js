@@ -19,7 +19,7 @@ function App() {
   // const styles = {
   //     color: "green",
   //     backgroundColor: "Orange",
-  //     fontSize: "200px"
+  //     fontSize:   "200px"
   // }
   // return (
   //     // inline styling with react
@@ -89,8 +89,10 @@ function App() {
   //     />
   //   </div>
   // );
+  // const jokesComponents = jokesData.map(joke => <Joke key={joke.id}question={joke.question} punchLine={joke.punchLine} />)
   return (
     <div className="jokes">
+      {/* {jokeComponents} */}
       <Joke
         joke={{
           question:
