@@ -1,3 +1,18 @@
-.circles {
+/* .circles {
   fill: teal;
+} */
+
+body {
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 14px;
+  color: #333;
+}
+circle {
+  fill: orange;
+}
+g.item text {
+  fill: #ddd;
+  font-size: 70px;
+  text-anchor: middle;
+  font-weight: bold;
 }

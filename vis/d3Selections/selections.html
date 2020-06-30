@@ -14,12 +14,20 @@
   </head>
   <body>
     <svg width="760" height="140">
-      <g transform="translate(70, 70)">
+      <!--Groups for regular circle experiments-->
+      <!-- <g transform="translate(70, 70)">
         <circle class="circles" r="40" />
         <circle class="circles" r="40" cx="120" />
         <circle class="circles" r="40" cx="240" />
         <circle class="circles" r="40" cx="360" />
         <circle class="circles" r="40" cx="480" />
+      </g> -->
+
+      <!--GROUPS for circles with numbers-->
+      <g transform="translate(70, 70)">
+        <g class="item" transform="translate(0, 0)"><circle r="40" /></g>
+        <g class="item" transform="translate(120, 0)"><circle r="40" /></g>
+        <g class="item" transform="translate(240, 0)"><circle r="40" /></g>
       </g>
     </svg>
     <script src="./js/main.js"></script>
