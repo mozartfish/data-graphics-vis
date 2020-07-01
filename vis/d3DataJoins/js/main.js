@@ -56,12 +56,37 @@ let cities = [
   { name: "Beijing", population: 11510000 },
 ];
 
-let s = d3.selectAll("circle");
-s.data(cities);
+// let s = d3.selectAll("circle");
+// s.data(cities);
 
-s.attr("r", (d) => {
-  let scaleFactor = 0.000005;
-  return d.population * scaleFactor;
-}).attr("cx", (d, i) => {
-  return i * 120;
-});
+// s.attr("r", (d) => {
+//   let scaleFactor = 0.000005;
+//   return d.population * scaleFactor;
+// }).attr("cx", (d, i) => {
+//   return i * 120;
+// });
+
+// create bars for histogram
+
+// Join cities to rect elements and modify height, width and position
+d3.selectAll("rect")
+  .data(cities)
+  .attr("height", 19)
+  .attr("width", function (d) {
+    let scaleFactor = 0.00004;
+    return d.population * scaleFactor;
+  })
+  .attr("y", function (d, i) {
+    return i * 20;
+  });
+
+// Join cities to text elements and modify content and position
+d3.selectAll("text")
+  .data(cities)
+  .attr("y", function (d, i) {
+    return i * 20 + 13;
+  })
+  .attr("x", -4)
+  .text(function (d) {
+    return d.name;
+  });
