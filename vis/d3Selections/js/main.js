@@ -40,7 +40,26 @@
 
 // removing circles with a button dynamically
 let button = d3.select("body").append("button");
+let click = 0;
+function addNumberedCircle(d, i) {
+  d3.select(this).append("circle").attr("r", 40);
+
+  d3.select(this)
+    .append("text")
+    .text(i + 1)
+    .attr("y", 50)
+    .attr("x", 30);
+}
 button.text("remove");
 button.on("click", function (d, i) {
-  d3.selectAll("circle").remove();
+  if (click == 0) {
+    d3.selectAll("circle").remove();
+    d3.selectAll("text").remove();
+    button.text("add");
+    click = 1;
+  } else {
+    d3.selectAll("g.item").each(addNumberedCircle);
+    button.text("remove");
+    click = 0;
+  }
 });
