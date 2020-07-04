@@ -56,38 +56,66 @@ button.text("add");
 // to modify existing and entering elements we can call a function
 // on the update and enter selections
 
+// let counter = 0;
+// button.on("click", function () {
+//   console.log(counter);
+//   if (counter == 0) {
+//     let u = d3.select("#content").selectAll("div").data(myData1);
+//     u.enter()
+//       .append("div")
+//       .merge(u)
+//       .text(function (d) {
+//         return d;
+//       });
+//     u.exit().remove();
+//     counter++;
+//   } else if (counter == 1) {
+//     console.log(counter);
+//     let v = d3.select("#content").selectAll("div").data(myData2);
+//     v.enter()
+//       .append("div")
+//       .merge(v)
+//       .text(function (d) {
+//         return d;
+//       });
+//     v.exit().remove();
+//     counter++;
+//   } else {
+//     let x = d3.select("#content").selectAll("div").data(myData3);
+//     x.enter()
+//       .append("div")
+//       .merge(x)
+//       .text(function (d) {
+//         return d;
+//       });
+//     x.exit().remove();
+//     counter = 0;
+//   }
+// });
+
+// d3 enter, update exit pattern with join
+
 let counter = 0;
 button.on("click", function () {
   console.log(counter);
   if (counter == 0) {
     let u = d3.select("#content").selectAll("div").data(myData1);
-    u.enter()
-      .append("div")
-      .merge(u)
-      .text(function (d) {
-        return d;
-      });
-    u.exit().remove();
+    u.join("div").text(function (d) {
+      return d;
+    });
     counter++;
   } else if (counter == 1) {
     console.log(counter);
     let v = d3.select("#content").selectAll("div").data(myData2);
-    v.enter()
-      .append("div")
-      .merge(v)
-      .text(function (d) {
-        return d;
-      });
-    v.exit().remove();
+    v.join("div").text(function (d) {
+      return d;
+    });
     counter++;
   } else {
     let x = d3.select("#content").selectAll("div").data(myData3);
-    x.enter()
-      .append("div")
-      .merge(x)
-      .text(function (d) {
-        return d;
-      });
+    x.join("div").text(function (d) {
+      return d;
+    });
     x.exit().remove();
     counter = 0;
   }
