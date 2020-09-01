@@ -27,9 +27,20 @@ let textData = [
 //   .text((d) => d);
 
 // foreign object selection stuff
-let telememnts = d3
+let telement = d3
   .select("#hello-svg")
   .selectAll("foreignObject")
   .data(textData)
   .enter()
   .append("foreignObject");
+
+telement
+  .attr("x", 5)
+  .attr("y", (d, i) => i * 20 + 60)
+  .attr("width", 100)
+  .attr("height", 50);
+
+let textInfo = telement
+  .append("xhtml:body")
+  .append("p")
+  .text((d, i) => d);

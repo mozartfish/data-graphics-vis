@@ -1,5 +1,11 @@
-text-info {
+/* text-info {
   max-width: 50;
+  text-overflow: ellipsis;
+  overflow: hidden;
+} */
+
+p {
+  max-width: 150px;
   text-overflow: ellipsis;
   overflow: hidden;
 }
