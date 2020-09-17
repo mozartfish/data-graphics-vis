@@ -7,8 +7,8 @@ const height = 450 - margin.top - margin.bottom;
 let svg = d3
   .select("#heat_map")
   .append("svg")
-  .attr("width", width + margin.left + margin.right)
-  .attr("height", height + margin.top + margin.bottom)
+  .attr("width", width + margin.left + margin.right + 200)
+  .attr("height", height + margin.top + margin.bottom + 200)
   .append("g")
   .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
@@ -35,15 +35,18 @@ d3.csv("/data/basicData.csv", function (d) {
     value: +d.value,
   };
 }).then(function (data) {
+  // find the min value of the data
   const dataMin = d3.min(data, function (d) {
     return d.value;
   });
+
+  // find the max value of the data
   const dataMax = d3.max(data, function (d) {
     return d.value;
   });
 
   // color scale for the heat map
-  const myColor = d3
+  const colorScale = d3
     .scaleLinear()
     .range(["white", "#69b3a2"])
     .domain([dataMin, dataMax]);
@@ -64,6 +67,32 @@ d3.csv("/data/basicData.csv", function (d) {
     .attr("width", xScale.bandwidth())
     .attr("height", yScale.bandwidth())
     .style("fill", function (d) {
-      return myColor(d.value);
+      return colorScale(d.value);
     });
+
+  // create the legend for the chart
+  let legend = svg
+    .selectAll(".legend")
+    .data(colorScale.ticks())
+    .enter()
+    .append("g")
+    .attr("transform", function (d, i) {
+      // the tick value data
+      console.log(d);
+      return "translate(" + i * 40 + "," + 500 + ")";
+    })
+    .attr("class", "legend");
+
+  legend
+    .append("rect")
+    .attr("width", 40)
+    .attr("height", 20)
+    .style("fill", colorScale);
+
+  legend
+    .append("text")
+    .attr("font-size", "10pt")
+    .attr("x", 5)
+    .attr("y", 35)
+    .text(String);
 });
