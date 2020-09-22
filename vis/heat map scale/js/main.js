@@ -70,29 +70,43 @@ d3.csv("/data/basicData.csv", function (d) {
       return colorScale(d.value);
     });
 
-  // create the legend for the chart
-  let legend = svg
-    .selectAll(".legend")
-    .data(colorScale.ticks())
-    .enter()
+  // creating legened using susie lu's library
+  let heatLegend = svg
     .append("g")
-    .attr("transform", function (d, i) {
-      // the tick value data
-      console.log(d);
-      return "translate(" + i * 40 + "," + 500 + ")";
-    })
-    .attr("class", "legend");
+    .classed("legendLinear", true)
+    .attr("transform", "translate(20, 500)");
 
-  legend
-    .append("rect")
-    .attr("width", 40)
-    .attr("height", 20)
-    .style("fill", colorScale);
+  let legendLinear = d3
+    .legendColor()
+    .shapeWidth(50)
+    .cells(10)
+    .orient("horizontal")
+    .scale(colorScale);
 
-  legend
-    .append("text")
-    .attr("font-size", "10pt")
-    .attr("x", 5)
-    .attr("y", 35)
-    .text(String);
+  svg.select(".legendLinear").call(legendLinear);
+  // // create the legend for the chart
+  // let legend = svg
+  //   .selectAll(".legend")
+  //   .data(colorScale.ticks())
+  //   .enter()
+  //   .append("g")
+  //   .attr("transform", function (d, i) {
+  //     // the tick value data
+  //     console.log(d);
+  //     return "translate(" + i * 40 + "," + 500 + ")";
+  //   })
+  //   .attr("class", "legend");
+
+  // legend
+  //   .append("rect")
+  //   .attr("width", 40)
+  //   .attr("height", 20)
+  //   .style("fill", colorScale);
+
+  // legend
+  //   .append("text")
+  //   .attr("font-size", "10pt")
+  //   .attr("x", 5)
+  //   .attr("y", 35)
+  //   .text(String);
 });
