@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <!--STYLE SHEETS-->
+    <link rel="stylesheet" href="styles.css" />
+    <!--Vue-->
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+
+  <body>
+    <!-- Hello World! What's up?
+    Scripts needed for rendering go before the body close tag -->
+
+    <!--Hello World Example-->
+    <div id="app">{{message}}</div>
+
+    <!--binding element attributes-->
+    <div id="app-2">
+      <span v-bind:title="message">
+        Hover your mouse over me for a few seconds to see my dynamically bound
+        title!
+      </span>
+    </div>
+
+    <!--Conditionals-->
+    <div id="app-3">
+      <span v-if="seen">Now you see me</span>
+    </div>
+
+    <!--For loops-->
+    <div id="app-4">
+      <ol>
+        <li v-for="todo in todos">{{ todo.text }}</li>
+      </ol>
+    </div>
+
+    <!--User input-->
+    <div id="app-5">
+      <p>{{ message }}</p>
+      <button v-on:click="reverseMessage">Reverse Message</button>
+    </div>
+
+    <!--interactive user input-->
+    <div id="app-6">
+      <p>{{ message }}</p>
+      <input v-model="message" />
+    </div>
+
+    <script>
+      // hello world example
+      let app = new Vue({
+        el: "#app",
+        data: {
+          message: "Hello Vue!",
+        },
+      });
+      // binding element data
+      let app2 = new Vue({
+        el: "#app-2",
+        data: {
+          message: "You loaded this page on " + new Date().toLocaleString(),
+        },
+      });
+
+      // conditionals
+      // booleans
+      let app3 = new Vue({
+        el: "#app-3",
+        data: {
+          seen: true,
+        },
+      });
+
+      // vue for loop
+      let app4 = new Vue({
+        el: "#app-4",
+        data: {
+          todos: [
+            { text: "Learn JavaScript" },
+            { text: "Learn Vue" },
+            { text: "Build something awesome" },
+          ],
+        },
+      });
+
+      // user input
+      let app5 = new Vue({
+        el: "#app-5",
+        data: {
+          message: "Hello Vue.js!",
+        },
+        methods: {
+          reverseMessage: function () {
+            this.message = this.message.split("").reverse().join("");
+          },
+        },
+      });
+
+      // interactive input with v-model
+      let app6 = new Vue({
+        el: "#app-6",
+        data: {
+          message: "Hello Vue!",
+        },
+      });
+    </script>
+  </body>
+</html>
