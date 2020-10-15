@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Page Title</title>
+    <!--STYLE SHEETS-->
+    <link rel="stylesheet" href="styles.css" />
+    <!--Vue-->
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+
+  <body>
+    <script>
+      // data object
+      let data = { a: 1 };
+
+      // add object to vue instance
+      let vm = new Vue({
+        data: data,
+      });
+
+      // Get the property on the instance
+      // returns property from original data
+      vm.a == data.a;
+
+      // update the data
+      console.log("original vm.a value", data.a);
+      vm.a = 2;
+      console.log("updated the a value", data.a);
+    </script>
+  </body>
+</html>
