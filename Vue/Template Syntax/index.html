@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Page Title</title>
+    <!--STYLE SHEETS-->
+    <link rel="stylesheet" href="styles.css" />
+    <!--Vue-->
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+
+  <body>
+    <div id="example1" class="demo">
+      <p>Using mustaches: {{ rawHtml }}</p>
+      <p>Using v-html directive: <sp
+        an v-html="rawHtml"></span></p>
+    </div>
+    <script>
+      const RenderHtmlApp = {
+        data() {
+          return {
+            rawHtml: '<span style="color: red">This should be red.</span>',
+          };
+        },
+      };
+
+      Vue.createApp(RenderHtmlApp).mount('#example1');
+    </script>
+  </body>
+</html>
